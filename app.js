@@ -57,7 +57,6 @@ MongoClient.connect(MONGO_DB_CONNECTION_URL)
                     .limit(1).toArray().then(([image]) => {
                         if(image)
                         {
-                            console.log(image)
                             response.set({"Content-Type": image.mimeType})
                             response.send(image.data.buffer)
                         } else
